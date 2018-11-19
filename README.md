@@ -1,7 +1,7 @@
 # bookmark_manager
 # User stories
 
-![alt text](https://raw.github.com/GDSNewt/bookmark_manager/blob/master/images/bookmark_mgr%20domain%20model.key)
+![domain model](https://raw.github.com/GDSNewt/bookmark_manager/blob/master/images/bookmark_mgr%20domain%20model.png)
 
 
 
