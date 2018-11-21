@@ -5,6 +5,10 @@
 As a User
 So that I can easily locate pages I want to find again
 I want to be shown a list of bookmarks
+
+As a User
+So that I can remember new pages that I find interesting
+I want to add a bookmark
 ```
 
 This is the domain model for that first user story.
