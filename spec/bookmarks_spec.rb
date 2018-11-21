@@ -10,10 +10,17 @@ describe Bookmark do
       connection.exec("INSERT INTO bookmarks (url) VALUES ('http://www.google.com');")
 
       bookmarks = Bookmark.all
-      
+
       expect(bookmarks).to include("http://www.google.com")
       expect(bookmarks).to include("http://www.makersacademy.com")
       expect(bookmarks).to include("http://www.destroyallsoftware.com")
+    end
+  end
+
+  describe '.create' do
+    it 'adds a URL to the database' do
+      Bookmark.create("http://www.bbc.co.uk")
+      expect(Bookmark.all).to include("http://www.bbc.co.uk")
     end
   end
 end
