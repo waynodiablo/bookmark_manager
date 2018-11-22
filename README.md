@@ -17,7 +17,7 @@ This is the domain model for that first user story.
 
 ![git domain model](https://github.com/waynodiablo/bookmark_manager/blob/master/images/bookmark_mgr%20domain%20model.001.png)
 
-## Database setup instructions
+##  Database setup instructions
 We used PostgreSQL to create a database called Bookmark_Manager, which contained a table called "bookmarks".
 
 1) `brew install PostgreSQL`

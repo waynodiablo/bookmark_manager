@@ -13,7 +13,7 @@ get '/add-bookmark' do
 end
 
 post '/add-bookmark' do
-  Bookmark.create(params['url'])
+  Bookmark.create(url: params[:url], title: params[:title])
   redirect '/'
 end
 
