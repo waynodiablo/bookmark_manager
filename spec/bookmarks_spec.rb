@@ -23,13 +23,11 @@ describe Bookmark do
   describe '.create' do
     it 'adds a new bookmark to the database' do
       bookmark = Bookmark.create(url: 'http://www.testbookmark.com', title: 'Test Bookmark')
-      p persisted_data = persisted_data(id: bookmark.id)
-
+      persisted_data = persisted_data(id: bookmark.id)
       expect(bookmark).to be_a Bookmark
-      expect(bookmark.id).to eq persisted_data.first['id']
+      expect(bookmark.id).to eq persisted_data['id']
       expect(bookmark.title).to eq 'Test Bookmark'
       expect(bookmark.url).to eq 'http://www.testbookmark.com'
-      # expect(Bookmark.all).to include("http://www.bbc.co.uk")
     end
   end
 end
