@@ -44,6 +44,31 @@ class Bookmark
     )
   end
 
+  def self.update(id:, url:, title:)
+    result = DatabaseConnection.query(
+      "UPDATE bookmarks SET url = '#{url}', title = '#{title}'
+      WHERE id = #{id} RETURNING id, url, title;"
+    )
+    Bookmark.new(
+      id: result[0]['id'],
+      title: result[0]['title'],
+      url: result[0]['url']
+    )
+  end
+
+  def self.find(id:)
+    result = DatabaseConnection.query("SELECT * FROM bookmarks WHERE id = #{id};")
+    Bookmark.new(
+      id: result[0]['id'],
+      title: result[0]['title'],
+      url: result[0]['url']
+    )
+  end
+
+
+
+
+
   # private
   # def self.which_connection_to_use
   #   if ENV['ENVIRONMENT']== 'test'
