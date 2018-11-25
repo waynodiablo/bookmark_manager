@@ -1,9 +1,9 @@
 require 'sinatra/base'
 require './lib/Bookmarks.rb'
+require './database_connection_setup'
 
 class Bookmark_Manager < Sinatra::Base
 enable :sessions, :method_override
-
 
 get '/' do
   @bookmarks = Bookmark.all
@@ -26,8 +26,6 @@ delete '/:id' do
   # connection.exec("DELETE FROM bookmarks WHERE id = #{params['id']}")
   redirect '/'
 end
-
-
 
   run! if app_file == $0
 end
